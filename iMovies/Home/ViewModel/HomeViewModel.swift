@@ -8,14 +8,10 @@
 import UIKit
 
 class HomeViewModel {
-    private weak var view:HomeVC?
     private var router: HomeRouter?
     
-    func bind(view: HomeVC, router: HomeRouter) {
-        self.view = view
+    func bind(router: HomeRouter) {
         self.router = router
-        ///Bindear router con la vista
-        self.router?.setThisSourceView(view)
     }
     
     
