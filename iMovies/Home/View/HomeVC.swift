@@ -34,10 +34,12 @@ class HomeVC: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tblView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
+        tblView.register(MainMovieCell.self, forCellReuseIdentifier: MainMovieCell.keyID)
         movies
-            .bind(to: tblView.rx.items(cellIdentifier: "myCell", cellType: UITableViewCell.self)){ (row, movie, cell) in
-                cell.textLabel?.text = movie.name
+            .bind(to: tblView.rx.items(cellIdentifier: MainMovieCell.keyID, cellType: MainMovieCell.self)){ (row, movie, cell) in
+                cell.movieTitle.text = movie.name
+                cell.movieImgView.image = UIImage.init(named: movie.img)
+                cell.selectionStyle = .none
             }
             .disposed(by: disposeBag)
         
