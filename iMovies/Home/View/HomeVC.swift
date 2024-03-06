@@ -17,27 +17,13 @@ class HomeVC: UIViewController, UITableViewDelegate {
     //MARK: - Properties
     private var router = HomeRouter()
     private var viewModel = HomeViewModel()
-    let movies : Observable<[String]> = Observable.just([
-        "El Padrino",
-        "El Señor de los Anillos: El retorno del Rey",
-        "Titanic",
-        "Star Wars: Episodio IV - Una nueva esperanza",
-        "El Rey León",
-        "Forrest Gump",
-        "La lista de Schindler",
-        "Matrix",
-        "El Caballero de la Noche",
-        "El Resplandor",
-        "Parásitos",
-        "Jurassic Park",
-        "Avatar",
-        "El Señor de los Anillos: La Comunidad del Anillo",
-        "Gladiador",
-        "Pulp Fiction",
-        "La Guerra de las Galaxias: Episodio V - El Imperio Contraataca",
-        "Volver al Futuro",
-        "Mujer Maravilla",
-        "Toy Story"
+    
+    let movies : Observable<[Movie]> = Observable.just([
+        Movie.init(name: "Avatar, the way of water", img: "avatar"),
+        Movie.init(name: "The Batman", img: "batman"),
+        Movie.init(name: "Forest Gump", img: "forest"),
+        Movie.init(name: "Gladiator", img: "gladiator"),
+        Movie.init(name: "Pulp Fiction by Quentin Tarantino", img: "pulpF")
     ])
     let disposeBag = DisposeBag()
     
@@ -51,15 +37,15 @@ class HomeVC: UIViewController, UITableViewDelegate {
         tblView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         movies
             .bind(to: tblView.rx.items(cellIdentifier: "myCell", cellType: UITableViewCell.self)){ (row, movie, cell) in
-                cell.textLabel?.text = movie
+                cell.textLabel?.text = movie.name
             }
             .disposed(by: disposeBag)
-        //MARK: - Navigation
-        
-        //MARK: - IBActions
-        
-        //MARK: - Functions
         
     }
+    //MARK: - Navigation
+    
+    //MARK: - IBActions
+    
+    //MARK: - Functions
 }
 //MARK: - Delegates
