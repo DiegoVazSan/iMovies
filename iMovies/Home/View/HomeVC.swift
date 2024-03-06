@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, UITableViewDelegate {
     //MARK: - Outlets
     
     @IBOutlet weak var tblView: UITableView!
@@ -15,7 +17,7 @@ class HomeVC: UIViewController {
     //MARK: - Properties
     private var router = HomeRouter()
     private var viewModel = HomeViewModel()
-    let movies : [String] = [
+    let movies : Observable<[String]> = Observable.just([
         "El Padrino",
         "El Señor de los Anillos: El retorno del Rey",
         "Titanic",
@@ -36,37 +38,28 @@ class HomeVC: UIViewController {
         "Volver al Futuro",
         "Mujer Maravilla",
         "Toy Story"
-    ]
-
+    ])
+    let disposeBag = DisposeBag()
+    
     
     
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tblView.delegate = self
-        tblView.dataSource = self
+        
         tblView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
-        //viewModel.bind(router: router)
+        movies
+            .bind(to: tblView.rx.items(cellIdentifier: "myCell", cellType: UITableViewCell.self)){ (row, movie, cell) in
+                cell.textLabel?.text = movie
+            }
+            .disposed(by: disposeBag)
+        //MARK: - Navigation
+        
+        //MARK: - IBActions
+        
+        //MARK: - Functions
+        
     }
-    
-    //MARK: - Navigation
-    
-    //MARK: - IBActions
-    
-    //MARK: - Functions
-    
-    
 }
 //MARK: - Delegates
-extension HomeVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        movies.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")
-        cell?.textLabel?.text = movies[indexPath.row]
-        return cell ?? UITableViewCell()
-    }
-}
