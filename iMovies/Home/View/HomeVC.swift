@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeVC: UIViewController, UITableViewDelegate {
+class HomeVC: UIViewController {
     //MARK: - Outlets
     
     @IBOutlet weak var tblView: UITableView!
@@ -42,6 +42,15 @@ class HomeVC: UIViewController, UITableViewDelegate {
                 cell.selectionStyle = .none
             }
             .disposed(by: disposeBag)
+        
+        tblView.rx.modelSelected(Movie.self).subscribe(onNext: {
+            movieObject in
+            
+            let moveDetailVC = DetailMovieVC()
+            moveDetailVC.configureThis(movieImg: movieObject.img, movieTitle: movieObject.name, movieReview: "")
+            self.navigationController?.pushViewController(moveDetailVC, animated: true)
+        })
+        .disposed(by: disposeBag)
         
     }
     //MARK: - Navigation
