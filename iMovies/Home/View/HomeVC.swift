@@ -52,6 +52,11 @@ class HomeVC: UIViewController {
         })
         .disposed(by: disposeBag)
         
+        
+        tblView.rx.itemSelected.subscribe({
+            idxPath in
+            print("You did tap cell number \(idxPath)")
+        }).disposed(by: disposeBag)
     }
     //MARK: - Navigation
     
