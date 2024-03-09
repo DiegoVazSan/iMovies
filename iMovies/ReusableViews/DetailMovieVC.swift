@@ -14,6 +14,7 @@ class DetailMovieVC: UIViewController {
     
     private let disposeBag = DisposeBag()
     let imgName: BehaviorRelay = BehaviorRelay<String>(value: "")
+    let titleMovie: BehaviorRelay = BehaviorRelay<String>(value: "")
     
     var mainImgView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "tuImagen"))
@@ -49,6 +50,11 @@ class DetailMovieVC: UIViewController {
             UIImage.init(named: name)
         }).bind(to: mainImgView.rx.image)
             .disposed(by: disposeBag)
+        
+        titleMovie.subscribe(onNext: {
+            title in
+            self.titleLbl.text = title
+        }).disposed(by: disposeBag)
     }
     
     //MARK: - Navigation
