@@ -37,6 +37,7 @@
 		DBC63A022B97FDCE00E14AEC /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		DBC63A062B9801B500E14AEC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DBE1A412F0F132263B9A9F64 /* Pods-iMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMovies.release.xcconfig"; path = "Target Support Files/Pods-iMovies/Pods-iMovies.release.xcconfig"; sourceTree = "<group>"; };
+		DBFC7FFF2B9BDAD300B043FD /* MyRXPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyRXPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F77C76CE0BB52A752E6D6B96 /* Pods-iMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMovies.debug.xcconfig"; path = "Target Support Files/Pods-iMovies/Pods-iMovies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +82,7 @@
 		DBC639DA2B97FB4300E14AEC = {
 			isa = PBXGroup;
 			children = (
+				DBFC7FFF2B9BDAD300B043FD /* MyRXPlayground.playground */,
 				DBC639E52B97FB4300E14AEC /* iMovies */,
 				DBC639E42B97FB4300E14AEC /* Products */,
 				D744BDF1C103F9E6CF686146 /* Pods */,
