@@ -47,7 +47,7 @@ class HomeVC: UIViewController {
             movieObject in
             
             let moveDetailVC = DetailMovieVC()
-            moveDetailVC.configureThis(movieImg: movieObject.img, movieTitle: movieObject.name, movieReview: "")
+            moveDetailVC.imgName.accept(movieObject.img)
             self.navigationController?.pushViewController(moveDetailVC, animated: true)
         })
         .disposed(by: disposeBag)

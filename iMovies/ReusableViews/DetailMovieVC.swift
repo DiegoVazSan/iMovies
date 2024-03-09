@@ -6,9 +6,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class DetailMovieVC: UIViewController {
     //MARK: - Properties
+    
+    private let disposeBag = DisposeBag()
+    let imgName: BehaviorRelay = BehaviorRelay<String>(value: "")
+    
     var mainImgView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "tuImagen"))
         imageView.contentMode = .scaleAspectFit
@@ -38,6 +44,11 @@ class DetailMovieVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        imgName.map({
+            name in
+            UIImage.init(named: name)
+        }).bind(to: mainImgView.rx.image)
+            .disposed(by: disposeBag)
     }
     
     //MARK: - Navigation
@@ -64,12 +75,6 @@ class DetailMovieVC: UIViewController {
             reviewLbl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             reviewLbl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
-    }
-    
-    func configureThis(movieImg: String, movieTitle: String, movieReview: String){
-        self.mainImgView.image = UIImage(named: movieImg)
-        self.titleLbl.text = movieTitle
-        self.reviewLbl.text = movieReview
     }
     
 }
