@@ -4,12 +4,12 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="iMovies" customModuleProvider="target">
             <connections>
+                <outlet property="searcherBarTF" destination="2js-pg-xDX" id="Beo-01-nYi"/>
                 <outlet property="tblView" destination="XAX-WR-sG2" id="ck5-eD-1ZH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,24 +20,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XAX-WR-sG2">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="119" width="393" height="699"/>
+                    <color key="backgroundColor" red="0.94126723690000003" green="1" blue="0.76508332130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2js-pg-xDX">
+                    <rect key="frame" x="20" y="59" width="353" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="nha-mU-t4F"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.93090155600000002" green="1" blue="0.79277989689999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2js-pg-xDX" secondAttribute="trailing" constant="20" id="A6b-lx-j5o"/>
                 <constraint firstItem="XAX-WR-sG2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KWs-iq-fNL"/>
-                <constraint firstItem="XAX-WR-sG2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NHh-Ab-SZz"/>
+                <constraint firstItem="XAX-WR-sG2" firstAttribute="top" secondItem="2js-pg-xDX" secondAttribute="bottom" constant="20" id="SsW-T9-oHA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XAX-WR-sG2" secondAttribute="bottom" id="lnr-eT-PoB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XAX-WR-sG2" secondAttribute="trailing" id="sTn-4n-R0C"/>
+                <constraint firstItem="2js-pg-xDX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="wca-Ha-5TE"/>
+                <constraint firstItem="2js-pg-xDX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xaX-RM-vHc"/>
             </constraints>
-            <point key="canvasLocation" x="74" y="20"/>
+            <point key="canvasLocation" x="72.51908396946564" y="19.718309859154932"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
