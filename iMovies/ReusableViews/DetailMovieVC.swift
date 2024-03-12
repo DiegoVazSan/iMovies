@@ -62,7 +62,7 @@ class DetailMovieVC: UIViewController {
     
     //MARK: - Functions
     private func setupUI(){
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .yellow
         
         view.addSubview(mainImgView)
         view.addSubview(titleLbl)

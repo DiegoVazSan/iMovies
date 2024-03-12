@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,7 +12,6 @@
             <connections>
                 <outlet property="searcherBarTF" destination="2js-pg-xDX" id="Beo-01-nYi"/>
                 <outlet property="tblView" destination="XAX-WR-sG2" id="ck5-eD-1ZH"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -33,7 +33,7 @@
                 </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.93090155600000002" green="1" blue="0.79277989689999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="systemYellowColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2js-pg-xDX" secondAttribute="trailing" constant="20" id="A6b-lx-j5o"/>
                 <constraint firstItem="XAX-WR-sG2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KWs-iq-fNL"/>
@@ -46,4 +46,9 @@
             <point key="canvasLocation" x="72.51908396946564" y="19.718309859154932"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
