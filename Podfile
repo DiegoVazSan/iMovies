@@ -9,6 +9,7 @@ target 'iMovies' do
 
 pod 'RxSwift', '~> 6'
 pod 'RxCocoa', '~> 6'
+pod 'RxDataSources'
 
 
 end

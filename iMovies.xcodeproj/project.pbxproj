@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB4A3B657B96E0D2220F02F3 /* Pods_iMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D616ECBE9D81BAC2F9892466 /* Pods_iMovies.framework */; };
+		DB45394A2BA0D38400846098 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4539492BA0D38400846098 /* SectionModel.swift */; };
 		DB9E56022B99039A0098C6E4 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E56012B99039A0098C6E4 /* Movie.swift */; };
 		DB9E56052B991FA80098C6E4 /* MainMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E56042B991FA80098C6E4 /* MainMovieCell.swift */; };
 		DB9E56072B9935AE0098C6E4 /* DetailMovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E56062B9935AE0098C6E4 /* DetailMovieVC.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		D616ECBE9D81BAC2F9892466 /* Pods_iMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4539492BA0D38400846098 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		DB9E56012B99039A0098C6E4 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DB9E56042B991FA80098C6E4 /* MainMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMovieCell.swift; sourceTree = "<group>"; };
 		DB9E56062B9935AE0098C6E4 /* DetailMovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieVC.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9E56012B99039A0098C6E4 /* Movie.swift */,
+				DB4539492BA0D38400846098 /* SectionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				DBC639E72B97FB4300E14AEC /* AppDelegate.swift in Sources */,
 				DBC63A032B97FDCE00E14AEC /* HomeRouter.swift in Sources */,
+				DB45394A2BA0D38400846098 /* SectionModel.swift in Sources */,
 				DB9E56072B9935AE0098C6E4 /* DetailMovieVC.swift in Sources */,
 				DB9E56022B99039A0098C6E4 /* Movie.swift in Sources */,
 				DBC639FE2B97FCEC00E14AEC /* HomeVC.swift in Sources */,

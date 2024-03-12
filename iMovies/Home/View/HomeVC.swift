@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class HomeVC: UIViewController {
     //MARK: - Outlets
@@ -24,9 +25,29 @@ class HomeVC: UIViewController {
         Movie.init(name: "The Batman", img: "batman"),
         Movie.init(name: "Forest Gump", img: "forest"),
         Movie.init(name: "Gladiator", img: "gladiator"),
-        Movie.init(name: "Pulp Fiction by Quentin Tarantino", img: "pulpF")
+        Movie.init(name: "Pulp Fiction by Quentin Tarantino", img: "pulpF"),
+        Movie.init(name: "Terminator", img: "terminator"),
+        Movie.init(name: "Rambo", img: "Rambo"),
+        Movie.init(name: "Thor", img: "thor"),
+        Movie.init(name: "Capitan America", img: "ca"),
+        Movie.init(name: "Spiderman", img: "spider"),
+        Movie.init(name: "Guardians Of The Galaxy", img: "guardians"),
+        Movie.init(name: "dardevil", img: "Daredevil"),
+        Movie.init(name: "Punisher", img: "punisher")
     ])
     let disposeBag = DisposeBag()
+    
+    let dataSource = RxTableViewSectionedReloadDataSource<SectionModel>(configureCell: {
+        ds, tv, ip, item in
+        let cell : MainMovieCell = tv.dequeueReusableCell(withIdentifier: MainMovieCell.keyID, for: ip) as! MainMovieCell
+        cell.movieTitle.text = item.name
+        return cell
+    },
+       titleForHeaderInSection: {
+        ds, idx in
+        return ds.sectionModels[idx].header
+    })
+    
     
     
     
