@@ -7,10 +7,13 @@
 
 import UIKit
 
+
 class LoginVC: UIViewController {
     //MARK: - Outlets
     
-    
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var passwordTxtField: UITextField!
+    @IBOutlet weak var emailTxtField: UITextField!
     
     //MARK: - Properties
     static let nibName: String = "LoginVC"
