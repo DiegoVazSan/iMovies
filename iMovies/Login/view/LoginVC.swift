@@ -27,11 +27,9 @@ class LoginVC: UIViewController {
         emailTxtField.text = "diego.dev@gmail.com"
         passwordTxtField.text = "warMachineRock!@"
         
-        let emailObservable = emailTxtField.rx.text.orEmpty
-        let passwordObservable = passwordTxtField.rx.text.orEmpty
-        let observableCombined = Observable.combineLatest(emailObservable, passwordObservable)
         
-        self.loginBtn.rx.tap.withLatestFrom(observableCombined)
+        self.loginBtn.rx.tap.withLatestFrom(Observable.combineLatest(emailTxtField.rx.text.orEmpty,
+                                                                     passwordTxtField.rx.text.orEmpty))
             .subscribe(onNext: {
                 self.validateCredentials(user: $0, password: $1)
             }).disposed(by: disposeBag)
