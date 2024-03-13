@@ -30,13 +30,15 @@ class MainMovieCell: UITableViewCell {
         // Aquí puedes configurar el contenido de la etiqueta
         // Por ejemplo:
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = UIColor.black
+        label.textColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.backgroundColor = .black
         
         addSubview(movieImgView)
 

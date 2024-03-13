@@ -10,7 +10,7 @@
 		CB4A3B657B96E0D2220F02F3 /* Pods_iMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D616ECBE9D81BAC2F9892466 /* Pods_iMovies.framework */; };
 		DB45394A2BA0D38400846098 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4539492BA0D38400846098 /* SectionModel.swift */; };
 		DB45394D2BA10D7E00846098 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB45394C2BA10D7E00846098 /* LoginVC.swift */; };
-		DB45394F2BA10DFD00846098 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB45394E2BA10DFD00846098 /* LoginVC.xib */; };
+		DB867CB92BA125970086DFAB /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB867CB82BA125970086DFAB /* LoginVC.xib */; };
 		DB9E56022B99039A0098C6E4 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E56012B99039A0098C6E4 /* Movie.swift */; };
 		DB9E56052B991FA80098C6E4 /* MainMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E56042B991FA80098C6E4 /* MainMovieCell.swift */; };
 		DB9E56072B9935AE0098C6E4 /* DetailMovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E56062B9935AE0098C6E4 /* DetailMovieVC.swift */; };
@@ -28,7 +28,7 @@
 		D616ECBE9D81BAC2F9892466 /* Pods_iMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4539492BA0D38400846098 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		DB45394C2BA10D7E00846098 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		DB45394E2BA10DFD00846098 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		DB867CB82BA125970086DFAB /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		DB9E56012B99039A0098C6E4 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DB9E56042B991FA80098C6E4 /* MainMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMovieCell.swift; sourceTree = "<group>"; };
 		DB9E56062B9935AE0098C6E4 /* DetailMovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieVC.swift; sourceTree = "<group>"; };
@@ -79,8 +79,7 @@
 		DB45394B2BA10D6000846098 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				DB45394C2BA10D7E00846098 /* LoginVC.swift */,
-				DB45394E2BA10DFD00846098 /* LoginVC.xib */,
+				DBA5EB192BA1255500838F6E /* view */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -92,6 +91,15 @@
 				DB9E56062B9935AE0098C6E4 /* DetailMovieVC.swift */,
 			);
 			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		DBA5EB192BA1255500838F6E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				DB867CB82BA125970086DFAB /* LoginVC.xib */,
+				DB45394C2BA10D7E00846098 /* LoginVC.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		DBC639DA2B97FB4300E14AEC = {
@@ -233,9 +241,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB867CB92BA125970086DFAB /* LoginVC.xib in Resources */,
 				DBC639FF2B97FCEC00E14AEC /* HomeVC.xib in Resources */,
 				DBC639F32B97FB4400E14AEC /* LaunchScreen.storyboard in Resources */,
-				DB45394F2BA10DFD00846098 /* LoginVC.xib in Resources */,
 				DBC639F02B97FB4400E14AEC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
