@@ -57,8 +57,16 @@ class LoginVC: UIViewController {
     
     func goToMainVC(){
         let homeVC = HomeVC(nibName: "HomeVC", bundle: nil)
-        homeVC.modalPresentationStyle = .fullScreen
-        self.present(homeVC, animated: true, completion: nil)
+        
+        let rootViewController = UIViewController()
+        rootViewController.view.backgroundColor = .white
+        rootViewController.title = "iMovies"
+        let navigationController = UINavigationController(rootViewController: homeVC)
+        navigationController.navigationBar.tintColor = .black
+        navigationController.navigationBar.barTintColor = .systemBlue
+        navigationController.modalPresentationStyle = .fullScreen
+        
+        present(navigationController, animated: true, completion: nil)
     }
     
     func showErrorAlert() {

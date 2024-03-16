@@ -47,7 +47,8 @@ class DetailMovieVC: UIViewController {
         setupUI()
         imgName.map({
             name in
-            UIImage.init(named: name)
+            print("Resources count \(RxSwift.Resources.total)")
+            return UIImage.init(named: name)
         }).bind(to: mainImgView.rx.image)
             .disposed(by: disposeBag)
         
@@ -62,7 +63,7 @@ class DetailMovieVC: UIViewController {
     
     //MARK: - Functions
     private func setupUI(){
-        self.view.backgroundColor = .yellow
+        self.view.backgroundColor = .systemYellow
         
         view.addSubview(mainImgView)
         view.addSubview(titleLbl)

@@ -84,7 +84,9 @@ class HomeVC: UIViewController {
                 .items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        tblView.rx.modelSelected(Movie.self).subscribe(onNext: {
+        tblView.rx.modelSelected(Movie.self)
+            .debug("MyTest")
+            .subscribe(onNext: {
             movieObject in
             
             let moveDetailVC = DetailMovieVC()
@@ -97,7 +99,7 @@ class HomeVC: UIViewController {
         
         tblView.rx.itemSelected.subscribe({
             idxPath in
-            print("You did tap cell number \(idxPath)")
+//            print("You did tap cell number \(idxPath)")
         }).disposed(by: disposeBag)
     }
     //MARK: - Navigation
